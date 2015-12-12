@@ -5,9 +5,22 @@ namespace RestaurantManager.Models
 {
     public abstract class DataManager : INotifyPropertyChanged
     {
+        private RestaurantContext _repository;
         protected RestaurantContext Repository
         {
-            get; private set;
+            get
+            {
+                return _repository;
+            }
+
+            private set
+            {
+                if (value != _repository)
+                {
+                    _repository = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
         public DataManager()
@@ -19,7 +32,6 @@ namespace RestaurantManager.Models
         {
             this.Repository = new RestaurantContext();
             await this.Repository.InitializeContextAsync();
-            OnPropertyChanged("Repository");
             OnDataLoaded();
         }
 
@@ -30,7 +42,10 @@ namespace RestaurantManager.Models
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            if (PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
         #endregion

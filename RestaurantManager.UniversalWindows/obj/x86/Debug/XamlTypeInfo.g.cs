@@ -366,6 +366,11 @@ namespace RestaurantManager.UniversalWindows.RestaurantManager_UniversalWindows_
             var that = (global::RestaurantManager.Models.ExpediteDataManager)instance;
             return that.OrderItems;
         }
+        private void set_0_ExpediteDataManager_OrderItems(object instance, object Value)
+        {
+            var that = (global::RestaurantManager.Models.ExpediteDataManager)instance;
+            that.OrderItems = (global::System.Collections.Generic.List<global::RestaurantManager.Models.Order>)Value;
+        }
         private object get_1_Order_Id(object instance)
         {
             var that = (global::RestaurantManager.Models.Order)instance;
@@ -488,7 +493,7 @@ namespace RestaurantManager.UniversalWindows.RestaurantManager_UniversalWindows_
                 userType = (global::RestaurantManager.UniversalWindows.RestaurantManager_UniversalWindows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("RestaurantManager.Models.ExpediteDataManager");
                 xamlMember = new global::RestaurantManager.UniversalWindows.RestaurantManager_UniversalWindows_XamlTypeInfo.XamlMember(this, "OrderItems", "System.Collections.Generic.List`1<RestaurantManager.Models.Order>");
                 xamlMember.Getter = get_0_ExpediteDataManager_OrderItems;
-                xamlMember.SetIsReadOnly();
+                xamlMember.Setter = set_0_ExpediteDataManager_OrderItems;
                 break;
             case "RestaurantManager.Models.Order.Id":
                 userType = (global::RestaurantManager.UniversalWindows.RestaurantManager_UniversalWindows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("RestaurantManager.Models.Order");
