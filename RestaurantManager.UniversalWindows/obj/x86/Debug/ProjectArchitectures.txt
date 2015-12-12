@@ -1,0 +1,2 @@
+C:\Users\talk2\Downloads\hwstart\hwstart\RestaurantManager.Models\RestaurantManager.Models.csproj;x86
+C:\Users\talk2\Downloads\hwstart\hwstart\RestaurantManager.UniversalWindows\RestaurantManager.UniversalWindows.csproj;x86
